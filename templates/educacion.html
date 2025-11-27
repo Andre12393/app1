@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Educación - NutriApp</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body { background-color: #f8f9fa; }
+.navbar-brand { font-weight: bold; }
+
+/* Hero */
+.hero-educ {
+    background-color: #28a745;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+.hero-educ h1 { font-size: 3rem; font-weight: bold; }
+.hero-educ p { font-size: 1.2rem; }
+
+/* Secciones */
+.section-title { font-weight: bold; margin-bottom: 20px; }
+.card-educ {
+    background: #ffffffcc;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+.card-educ:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.btn-home {
+    background-color: #28a745;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 25px;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+.btn-home:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container">
+<a class="navbar-brand" href="/inicio">NutriApp</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="/inicio">Inicio</a></li>
+<li class="nav-item"><a class="nav-link" href="/perfil">Perfil</a></li>
+<li class="nav-item"><a class="nav-link active" href="/educacion">Educación</a></li>
+<li class="nav-item"><a class="nav-link" href="/logout">Cerrar Sesión</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="hero-educ">
+<div class="container">
+<h1>Aprende sobre Nutrición</h1>
+<p>Consejos, guías y recursos prácticos para mejorar tu alimentación y bienestar</p>
+</div>
+</section>
+
+<!-- Artículos Educativos -->
+<section class="container my-5">
+<h2 class="section-title">Artículos Educativos</h2>
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card-educ">
+<h5>¿Cómo leer las etiquetas nutricionales?</h5>
+<p>Ejemplo: mira los gramos de azúcar y grasas saturadas en un cereal. Consejo: elige productos con menos azúcares añadidos y más fibra.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card-educ">
+<h5>Mitos y verdades sobre dietas de moda</h5>
+<p>Ejemplo: la dieta keto puede funcionar temporalmente, pero no siempre es sostenible. Consejo: prioriza una alimentación balanceada a largo plazo.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card-educ">
+<h5>Macronutrientes y su función</h5>
+<p>Proteínas: reconstruyen músculos. Carbohidratos: energía diaria. Grasas saludables: absorción de vitaminas. Consejo: balancea cada comida.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card-educ">
+<h5>Importancia de la hidratación</h5>
+<p>Ejemplo: tomar 2 litros de agua al día. Consejo: añade frutas y verduras ricas en agua, como pepino y sandía.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card-educ">
+<h5>Fibra y digestión</h5>
+<p>Ejemplo: avena, legumbres y frutas. Consejo: aumenta la fibra gradualmente para evitar malestar y mejora tu tránsito intestinal.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Recursos Descargables -->
+<section class="container my-5">
+<h2 class="section-title">Recursos Descargables</h2>
+<div class="row g-4">
+
+<div class="col-md-6">
+<div class="card-educ">
+<h5>Planillas de ejercicios básicos</h5>
+<p>Rutinas simples para complementar tu nutrición y mejorar fuerza y resistencia.</p>
+<a href="/static/planilla_ejercicios.pdf" class="btn btn-home">Descargar PDF</a>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="card-educ">
+<h5>Guía de macronutrientes</h5>
+<p>Tabla completa de carbohidratos, proteínas y grasas para planificar tus comidas y lograr tus objetivos.</p>
+<a href="/static/guia_macronutrientes.pdf" class="btn btn-home">Descargar PDF</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Volver al inicio -->
+<div class="text-center mb-5">
+<a href="/inicio" class="btn btn-home">Volver al Inicio</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

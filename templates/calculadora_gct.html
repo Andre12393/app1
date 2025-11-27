@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora GCT - NutriApp</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body { background-color: #f8f9fa; }
+.container { max-width: 700px; margin-top: 50px; background: #ffffffcc; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+h2 { font-weight: bold; margin-bottom: 20px; }
+.btn-calc { background-color: #28a745; color: white; border-radius: 50px; padding: 10px 25px; margin-top: 10px; transition: 0.3s; }
+.btn-calc:hover { background-color: #218838; transform: scale(1.05); }
+.result { margin-top: 20px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2>Calculadora de Gasto Calórico Total (GCT)</h2>
+<form method="POST" action="/calculadora_gct">
+    <div class="mb-3">
+        <label for="tmb" class="form-label">TMB (kcal/día)</label>
+        <input type="number" class="form-control" name="tmb" id="tmb" step="0.1" required>
+    </div>
+    <div class="mb-3">
+        <label for="actividad" class="form-label">Nivel de actividad física</label>
+        <select class="form-select" name="actividad" required>
+            <option value="1.2">Sedentario</option>
+            <option value="1.375">Ligero</option>
+            <option value="1.55">Moderado</option>
+            <option value="1.725">Intenso</option>
+            <option value="1.9">Muy intenso</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-calc">Calcular GCT</button>
+</form>
+
+{% if gct %}
+<div class="result">
+    Tu GCT es: {{ gct }} kcal/día
+</div>
+{% endif %}
+
+<div class="mt-4">
+    <a href="/calculadoras" class="btn btn-calc">Volver a Calculadoras</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

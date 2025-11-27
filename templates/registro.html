@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Registro - NutriApp</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body {
+    background-color: #f8f9fa;
+}
+.navbar-brand { font-weight: bold; }
+.card-register {
+    max-width: 800px;
+    margin: 80px auto 50px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.card-register h2 { margin-bottom: 25px; font-weight: bold; }
+.form-control { border-radius: 8px; }
+.btn-register {
+    background-color: #28a745;
+    color: white;
+    font-size: 18px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+.btn-register:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container">
+<a class="navbar-brand" href="/inicio">NutriApp</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="/inicio">Inicio</a></li>
+<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+<li class="nav-item"><a class="nav-link" href="/perfil">Perfil</a></li>
+<li class="nav-item"><a class="nav-link" href="/educacion">Educación</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Registro -->
+<div class="card card-register">
+<h2 class="text-center">Crear Cuenta</h2>
+<form method="POST" class="row g-3">
+{% if error %}<div class="alert alert-danger">{{ error }}</div>{% endif %}
+
+<div class="col-md-6">
+<label class="form-label">Nombre</label>
+<input type="text" name="nombre" class="form-control" required>
+</div>
+<div class="col-md-6">
+<label class="form-label">Apellidos</label>
+<input type="text" name="apellidos" class="form-control" required>
+</div>
+
+<div class="col-md-6">
+<label class="form-label">Email</label>
+<input type="email" name="email" class="form-control" required>
+</div>
+<div class="col-md-6">
+<label class="form-label">Contraseña</label>
+<input type="password" name="password" class="form-control" required>
+</div>
+
+<div class="col-md-4">
+<label class="form-label">Edad</label>
+<input type="number" name="edad" class="form-control" required>
+</div>
+<div class="col-md-4">
+<label class="form-label">Sexo</label>
+<select name="sexo" class="form-control">
+<option>Hombre</option>
+<option>Mujer</option>
+<option>Otro</option>
+</select>
+</div>
+<div class="col-md-4">
+<label class="form-label">Nivel Actividad</label>
+<select name="actividad" class="form-control">
+<option>Sedentario</option>
+<option>Ligero</option>
+<option>Moderado</option>
+<option>Intenso</option>
+</select>
+</div>
+
+<div class="col-md-6">
+<label class="form-label">Peso (kg)</label>
+<input type="number" name="peso" class="form-control" step="0.1">
+</div>
+<div class="col-md-6">
+<label class="form-label">Altura (cm)</label>
+<input type="number" name="altura" class="form-control">
+</div>
+
+<div class="col-12">
+<label class="form-label">Objetivo</label>
+<select name="objetivo" class="form-control">
+<option>Bajar de peso</option>
+<option>Aumentar masa muscular</option>
+<option>Mantener peso</option>
+<option>Mejorar digestión</option>
+<option>Controlar diabetes</option>
+<option>Controlar hipertensión</option>
+</select>
+</div>
+
+<div class="col-md-6">
+<label class="form-label">Alergias</label>
+<input type="text" name="alergias" class="form-control">
+</div>
+<div class="col-md-6">
+<label class="form-label">Intolerancias</label>
+<input type="text" name="intolerancias" class="form-control">
+</div>
+
+<div class="col-md-6">
+<label class="form-label">Dieta</label>
+<select name="dieta" class="form-control">
+<option>Normal</option>
+<option>Vegana</option>
+<option>Vegetariana</option>
+<option>Keto</option>
+<option>Mediterránea</option>
+</select>
+</div>
+<div class="col-md-6">
+<label class="form-label">No le gusta</label>
+<input type="text" name="no_gusta" class="form-control">
+</div>
+
+<div class="col-12">
+<label class="form-label">Experiencia en Cocina</label>
+<select name="experiencia" class="form-control">
+<option>Principiante</option>
+<option>Intermedio</option>
+<option>Avanzado</option>
+<option>Chef aficionado</option>
+</select>
+</div>
+
+<div class="col-12 text-center mt-3">
+<button type="submit" class="btn btn-register px-5">Crear Cuenta</button>
+</div>
+</form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+

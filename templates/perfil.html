@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Perfil - NutriApp</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body { background-color: #f8f9fa; }
+.navbar-brand { font-weight: bold; }
+
+.card-perfil {
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.card-perfil h2 { margin-bottom: 20px; font-weight: bold; }
+.section-title { font-weight: bold; margin-top: 20px; margin-bottom: 10px; }
+.btn-home, .btn-logout {
+    background-color: #28a745;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 25px;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+.btn-home:hover, .btn-logout:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar sin botón cerrar sesión -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container">
+<a class="navbar-brand" href="/inicio">NutriApp</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="/inicio">Inicio</a></li>
+<li class="nav-item"><a class="nav-link active" href="/perfil">Perfil</a></li>
+<li class="nav-item"><a class="nav-link" href="/educacion">Educación</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Perfil -->
+<div class="card card-perfil">
+<h2 class="text-center">Perfil de Usuario</h2>
+
+<div class="row mb-3">
+<div class="col-md-6">
+<p><span class="section-title">Nombre:</span> {{ user.nombre }} {{ user.apellidos }}</p>
+<p><span class="section-title">Email:</span> {{ user.email }}</p>
+<p><span class="section-title">Edad:</span> {{ user.edad }} años</p>
+<p><span class="section-title">Sexo:</span> {{ user.sexo }}</p>
+</div>
+<div class="col-md-6">
+<p><span class="section-title">Peso:</span> {{ user.peso }} kg</p>
+<p><span class="section-title">Altura:</span> {{ user.altura }} cm</p>
+<p><span class="section-title">Nivel de actividad:</span> {{ user.actividad }}</p>
+<p><span class="section-title">Objetivo:</span> {{ user.objetivo }}</p>
+</div>
+</div>
+
+<div class="row mb-3">
+<div class="col-md-6">
+<p><span class="section-title">Alergias:</span> {{ user.alergias }}</p>
+<p><span class="section-title">Intolerancias:</span> {{ user.intolerancias }}</p>
+</div>
+<div class="col-md-6">
+<p><span class="section-title">Dieta:</span> {{ user.dieta }}</p>
+<p><span class="section-title">No le gusta:</span> {{ user.no_gusta }}</p>
+<p><span class="section-title">Experiencia en cocina:</span> {{ user.experiencia }}</p>
+</div>
+</div>
+
+<div class="text-center mt-4">
+<a href="/inicio" class="btn btn-home">Volver al Inicio</a>
+<a href="/logout" class="btn btn-logout">Cerrar Sesión</a>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
